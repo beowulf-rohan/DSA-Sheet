@@ -15,6 +15,8 @@ struct Node
     }
 };
 
+
+//TC - O(n).... SC - O(n)....
 void kPaths(Node* root, int k, vector<int> &path)
 {
     if(root == NULL)

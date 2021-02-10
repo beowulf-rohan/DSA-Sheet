@@ -16,6 +16,7 @@ struct Node
 };
 
 
+//TC - O(n).... SC - O(h)....
 Node* lca(Node* root ,int n1 ,int n2 )
 {
     if(root == NULL)
