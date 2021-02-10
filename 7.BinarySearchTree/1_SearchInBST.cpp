@@ -15,7 +15,7 @@ struct Node {
     }
 };
 
-
+// TC - O(h).... SC - O(h)....
 bool search(Node* root, int x)
 {
     if(root == NULL)

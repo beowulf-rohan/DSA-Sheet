@@ -15,7 +15,7 @@ struct Node {
     }
 };
 
-
+// TC - O(h).... SC - O(h)....
 bool checkBST(Node* root, int min, int max)
 {
     if(root == NULL)

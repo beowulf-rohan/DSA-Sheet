@@ -15,6 +15,7 @@ struct Node {
     }
 };
 
+// TC - O(h).... SC - O(h)....
 int minValue(Node* root)
 {
     if(root->left == NULL)
@@ -23,7 +24,7 @@ int minValue(Node* root)
     minValue(root->left);
 }
 
-
+// TC - O(h).... SC - O(h)....
 int maxValue(Node* root)
 {
     if(root->right == NULL)
