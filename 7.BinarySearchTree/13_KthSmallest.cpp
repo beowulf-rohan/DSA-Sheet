@@ -16,7 +16,46 @@ struct Node
     }
 };
 
-// SC - O(n).... TC - O(n)....
+// TC - O(n).... SC - O(1)....
+int KthSmallestElement(Node *root, int k)
+{
+    Node* curr = root;
+    while(curr != NULL)
+    {
+        if(curr->left == NULL)
+        {
+            k--;
+            if(k == 0)
+                return curr->data;
+            curr = curr->right;
+        }
+        else
+        {
+            Node* pre = curr->left;
+            while(pre->right != curr && pre->right != NULL)
+            {
+                pre = pre->right;
+            }
+            
+            if(pre->right == NULL)
+            {
+                pre->right = curr;
+                curr = curr->left;
+            }
+            else
+            {
+                pre->right = NULL;
+                k--;
+                if(k == 0)
+                    return curr->data;
+                curr = curr->right;
+            }
+        }
+    }
+    return -1;
+}
+
+// SC - O(n).... TC - O(h)....
 Node* KthSmallest(Node* root, int &k)
 {
     if(root == NULL)

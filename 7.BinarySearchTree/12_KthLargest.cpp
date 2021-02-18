@@ -17,7 +17,46 @@ struct Node
 };
 
 
-// SC - O(h).... TC - O(n)....
+// TC - O(n).... SC - O(1)....
+int kthLargest(Node *root, int k)
+{
+    Node* curr = root;
+    while(curr != NULL)
+    {
+        if(curr->right == NULL)
+        {
+            k--;
+            if(k == 0)
+                return curr->data;
+            curr = curr->left;
+        }
+        else
+        {
+            Node* pre = curr->right;
+            while(pre->left != NULL && pre->left != curr)
+            {
+                pre = pre->left;
+            }
+            
+            if(pre->left == NULL)
+            {
+                pre->left = curr;
+                curr = curr->right;
+            }
+            else
+            {
+                pre->left = NULL;
+                k--;
+                if(k == 0)
+                    return curr->data;
+                curr = curr->left;
+            }
+        }
+    }
+    return -1;
+}
+
+// SC - O(h).... TC - O(h)....
 Node* KthLargest(Node* root, int &k)
 {
     if(root == NULL)
