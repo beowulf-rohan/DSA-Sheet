@@ -6,6 +6,9 @@
         "chrono": "cpp",
         "complex": "cpp",
         "*.tcc": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp"
     }
 }
