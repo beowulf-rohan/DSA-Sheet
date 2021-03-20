@@ -2,7 +2,7 @@
 using namespace std;
 
 
-// TC - O(n2).... SC - O(n2)....
+// TC - O(nlogn).... SC - O(n)....
 int minRemoval(int* arr, int n, int k)
 {
     
