@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 int lcs(int n, int m, string s, string t)
 {
     int dp[2][m+1];

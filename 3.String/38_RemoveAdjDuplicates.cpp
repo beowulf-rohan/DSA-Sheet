@@ -36,7 +36,7 @@ string removeConsecutiveCharacter(string S)
     int j = 0;
     for (int i=1; i<n; i++) 
     {
-    if (S[j] != S[i]) 
+        if (S[j] != S[i]) 
         { 
             j++;  
             S[j] = S[i];
