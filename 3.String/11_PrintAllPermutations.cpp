@@ -1,40 +1,27 @@
-#include<iostream>
-#include<string>
-#include<algorithm>
-
+#include<bits/stdc++.h>
 using namespace std;
 
-void printSTL(string s)
+void permute(string S, int si, int ei, vector<string> &v)
 {
-    sort(s.begin(), s.end());
-	   
-    do
+	if(si == ei)
 	{
-	    cout << s << " ";
-	}while(next_permutation(s.begin(), s.end()));
+	    v.push_back(S);
+	    return;
+	}
+	for(int i = si; i <= ei; i++)
+	{
+	    swap(S[si], S[i]);
+	    permute(S, si+1, ei, v);
+	    swap(S[si], S[i]);
+	}
+}
 	    
-	cout << endl;
-}
-
-void permute(string s, int si, int ei)
+vector<string>find_permutation(string S)
 {
-    if(si == ei)
-    {
-        cout << s << " ";
-        return;
-    }
-
-    for(int i = si; i <= ei; i++)
-    {
-        swap(s[si], s[i]);     //swap      
-        permute(s, si+1, ei);
-        swap(s[si], s[i]);     //backtracking
-    }
-}
-
-void printRecursive(string s)
-{
-    permute(s, 0, s.size()-1);
+	vector<string> v;
+	permute(S, 0, S.size()-1, v);
+	sort(v.begin(), v.end());
+	return v;
 }
 
 int main()
@@ -47,8 +34,12 @@ int main()
 	    string s;
 	    cin >> s;
 	    
-        printRecursive(s);
-        //printSTL(s);
+        vector<string> v = find_permutation(s);
+        for(int i = 0; i < v.size(); i++)
+        {
+            cout << v[i] << " ";
+        }
+        cout << endl;
 	}
 	return 0;
 }
