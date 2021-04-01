@@ -7,6 +7,23 @@ struct petrolPump
     int distance;
 };
 
+// Better than second one....
+int tour(petrolPump p[],int n)
+{
+    int totalPetrol = 0, petrol = 0, s = 0;
+   for(int i = 0; i < n; i++)
+    {
+       totalPetrol += p[i].petrol - p[i].distance;
+       petrol += p[i].petrol - p[i].distance;
+        if(petrol < 0)
+        {
+           petrol = 0;
+            s = i+1;
+        }
+    }
+    return (totalPetrol < 0) ? -1 : s;
+}
+
 int tour(petrolPump p[],int n)
 {
    int start = 0, end = 1;

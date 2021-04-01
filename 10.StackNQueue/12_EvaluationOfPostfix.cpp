@@ -35,9 +35,8 @@ int evaluatePostfix(string str)
 // PRE - FIX....
 int evaluatePretfix(string str)
 {
-    reverse(str.begin(), str.end());
     stack<int> st;
-    for(int i = 0; i < str.size(); i++)
+    for(int i = str.size()-1; i >= 0; i--)
     {
         if(isDigit(str[i]))
             st.push(str[i]-'0');
