@@ -20,7 +20,6 @@ ll merge(ll *arr, int l, int m, int r)
         {
             temp[k++] = arr[j++];
             count += m - i;
-            ;
         }
     }
     while (i < m)

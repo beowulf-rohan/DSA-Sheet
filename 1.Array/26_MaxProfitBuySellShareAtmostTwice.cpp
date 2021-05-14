@@ -26,8 +26,8 @@ int maxProfit(vector<int>& prices)
         right[i] = max(right[i+1], rMax-prices[i]);
     }
         
-    int profit = max(left[n-1], right[0]);         //atMost 2 times.... You can also sell one stock... if you do 
-                                    //so left[n-1] or right[0] stores profit....
+    int profit = max(left[n-1], right[0]);         //atMost 2 times... You can also sell one stock...  
+                                                   //if you do so left[n-1] or right[0] stores profit.
     for(int i = 1; i < n; i++)
     {
         profit = max(profit, right[i]+left[i-1]);
@@ -36,18 +36,18 @@ int maxProfit(vector<int>& prices)
     return profit;
 }
 
-//TC-O(n).... SC-O(n).....
-int maxProfit(vector<int> prices)
-{
-    int profit = 0;
-    for(int i = 1; i < prices.size(); i++)
-    {
-        int sub = prices[i]-prices[i-1];
-        if(sub > 0)
-            profit += sum;
-    }
-    return profit;
-}
+//TC-O(n).... SC-O(1).....
+// int maxProfit(vector<int> prices)
+// {
+//     int profit = 0;
+//     for(int i = 1; i < prices.size(); i++)
+//     {
+//         int sub = prices[i]-prices[i-1];
+//         if(sub > 0)
+//             profit += sub;
+//     }
+//     return profit;
+// }
 
 
 int main()

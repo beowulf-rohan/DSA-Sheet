@@ -24,7 +24,7 @@ Pair solve(int* arr, int n)
     }
     else
     {
-        minmax.max = arr[0]; minmax.min = arr[1];
+        minmax.max = arr[0]; minmax.min = arr[0];
         i = 1;
     }
 
