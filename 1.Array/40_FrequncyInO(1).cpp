@@ -1,8 +1,32 @@
-#include<iostream>
-#include<vector>
+#include<bits/stdc++.h>
 
 using namespace std;
 
+// If arr[i] > n && you need count upto arr[i] = [1, n]...
+void frequencyCount(vector<int>& arr,int N, int p)
+{ 
+    for (int i = 0; i < N ; i++) 
+		arr[i] = arr[i]-1; 
+    
+    sort(arr.begin(), arr.end());
+    int ind = N;
+    for(int i = 0 ; i < N ; i++)
+    {
+    	if(arr[i] >= N)
+       {
+	       if(ind == N)
+    	        ind = i;
+    	    arr[i] = 0;
+    	}
+    }
+    for (int i = 0; i < ind ; i++) 
+    	arr[arr[i]%N] += + N; 
+    
+    for (int i = 0; i < N; i++) 
+		arr[i] = arr[i]/N;        
+}
+
+// If arr[i] < n....
 void frequencycount(vector<int>& arr,int n)
 { 
     vector<int> temp(n);
