@@ -11,7 +11,18 @@ void common(int** arr)
         mp[arr[0][i]] = 1;
     }
 
-    
+    for(int i = 1; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            if(mp[arr[i][j]] == i)
+            {
+                mp[arr[i][j]] = i+1;
+                if(i == n-1 && mp[arr[i][j]] == n)
+                    cout << arr[i][j] << " ";
+            }
+        }
+    }
 }
 
 int main()
