@@ -17,51 +17,48 @@ struct Node
 };
 
 
-struct P
+struct BST
 {
-    int size, min, max;
+    int min, max, size;
     bool isBST;
 };
 
-P findSize(Node* root)
+BST findBST(Node* root)
 {
     if(root == NULL)
-    {
-        P temp;
-        temp.isBST = true;      temp.size = 0;
-        temp.min = INT_MAX;     temp.max = INT_MIN;
-        return temp;
-    }
-    
-    if(root->left == NULL && root->right == NULL)
-    {
-        P temp;
-        temp.isBST = true;      temp.size = 1;
-        temp.min = root->data;  temp.max = root->data;
-        return temp;
-    }
-    
-    P leftData = findSize(root->left);
-    P rightData = findSize(root->right);
-    
-    P temp;
-    if(leftData.isBST && rightData.isBST && root->data > leftData.max && root->data < rightData.min)
-    {
-        temp.size = 1 + leftData.size + rightData.size;
-        temp.min = min(root->data, min(leftData.min, rightData.min));
-        temp.max = max(root->data, max(leftData.max, rightData.max));
-        temp.isBST = true;
-        
-        return temp;
-    }
-    
-    temp.size = max(leftData.size, rightData.size);
-    temp.isBST = false;
-    
-    return temp;
+	{
+	    BST p;
+	    p.min = INT_MAX;    p.max = INT_MIN;
+	    p.isBST = true;     p.size = 0;
+	    return p;
+	}
+	
+	if(root->left == NULL && root->right == NULL)
+	{
+	    BST p;
+	    p.min = root->data;    p.max = root->data;
+	    p.isBST = true;     p.size = 1;
+	    return p;
+	}
+	
+	BST l = findBST(root->left);
+	BST r = findBST(root->right);
+	
+	BST p;
+	if(l.isBST && r.isBST && root->data > l.max && root->data < r.min)
+	{
+	    p.min = min(root->data, l.min);    
+	    p.max = max(root->data, r.max);
+	    p.isBST = true;
+	    p.size = 1 + l.size + r.size;
+	    return p;
+	}
+	p.size = max(l.size, r.size);
+	p.isBST = false;
+	return p;
 }
 
 int largestBst(Node *root)
 {
-	return findSize(root).size;
+	return findBST(root).size;
 }

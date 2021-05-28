@@ -18,46 +18,50 @@ struct Node
 
 
 //TC - O(n).... SC - O(h)....
-Node* lca(Node* root, int a, int b)
+Node* LCA(Node* root, int a, int b)
 {
-    if(root == NULL)
-        return root;
-    if(root-> data == a || root->data == b)
-        return root;
+    if(!root)
+        return NULL;
     
-    Node* leftNode = lca(root->left, a, b);
-    Node* rightNode = lca(root->right, a, b);
-    
-    if(leftNode != NULL && rightNode != NULL)
+    if(root->data == a || root->data == b)
         return root;
     
-    if(leftNode != NULL)
+    Node* leftNode = LCA(root->left, a, b);
+    Node* rightNode = LCA(root->right, a, b);
+    
+    if(leftNode && rightNode)
+        return root;
+    else if(leftNode)
         return leftNode;
     else
         return rightNode;
 }
 
-int findNode(Node* root, int x)
+int find(Node* root, int x)
 {
-    if(root == NULL)
-        return 0;
+    if(!root)
+        return -1;
+    
     if(root->data == x)
-        return 1;
-    
-    int l = findNode(root->left, x);
-    int r = findNode(root->right, x);
-    
-    if(l == 0 && r == 0)
         return 0;
-    return l+r+1;
+    
+    int l = find(root->left, x);
+    int r = find(root->right, x);
+    
+    if(l == -1 && r == -1)
+        return -1;
+    else if(l != -1)
+        return l+1;
+    else
+        return r+1;
 }
 
 int findDist(Node* root, int a, int b) 
 {
-    Node* LCA = lca(root, a, b);
+    Node* lca = LCA(root, a, b);
     
-    int leftCount = findNode(LCA, a);
-    int rightCount = findNode(LCA, b);
+    int d1 = find(lca, a);
+    int d2 = find(lca, b);
     
-    return leftCount+rightCount-2;
+    return d1+d2;
 }

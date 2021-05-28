@@ -16,7 +16,7 @@ struct Node
     }
 };
 
-// TC - O(NlogN)... SC - O(N)...
+// TC - O(N)... SC - O(N)...
 void topView(struct Node *root)
 {
     if(root == NULL)

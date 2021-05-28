@@ -16,47 +16,49 @@ struct Node {
 };
 
 
-Node* deleteNode(Node* root, int key)
+Node* deleteNode(Node* root, int key) 
 {
-    if(root == NULL)
+    if(!root)
         return NULL;
         
+    //Key node is in the left tree....
     if(root->data > key)
     {
         root->left = deleteNode(root->left, key);
         return root;
     }
-    
+    //Key node is in the right tree....
     else if(root->data < key)
     {
         root->right = deleteNode(root->right, key);
         return root;
     }
-        
+    //Key node found....
     else
     {
-        if(root->left == NULL && root->right == NULL)
+        //Key node is a Leaf node....
+        if(!root->left && !root->right)
         {
             delete root;
             return NULL;
         }
-            
-        else if(root->left = NULL)
+        //Key Node is a node with no left branch....
+        else if(!root->left)
         {
             Node* temp = root->right;
             root->right = NULL;
             delete root;
             return temp;
         }
-            
-        else if(root->right == NULL)
+        //Key Node is a node with no right branch....
+        else if(!root->right)
         {
             Node* temp = root->left;
-            root->left = NULL;
+            root->left == NULL;
             delete root;
             return temp;
         }
-            
+        //Key Node is a node with right and left branch....
         else
         {
             Node* minNode = root->right;
@@ -64,11 +66,10 @@ Node* deleteNode(Node* root, int key)
             {
                 minNode = minNode->left;
             }
-                
-            int mindata = minNode->data;
-            root->data = mindata;
-            root->right = deleteNode(root->right, mindata);
+            int minNodeData = minNode->data;
+            root->data = minNodeData;
+            root->right = deleteNode(root->right, minNodeData);
             return root;
-        }
+        }    
     }
 }

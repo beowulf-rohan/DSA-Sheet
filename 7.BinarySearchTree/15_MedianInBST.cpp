@@ -52,12 +52,12 @@ int countNodes(Node* root)
 }
 
 
-float median(Node* root, int countTotal)
+float median(Node* root)
 {
     Node *prev;
     Node* curr = root;
     int count = 0;
-    
+    int countTotal = countNodes(root);
     
     while(curr != NULL)
     {

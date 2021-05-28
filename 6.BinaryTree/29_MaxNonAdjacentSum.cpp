@@ -36,6 +36,7 @@ int solve(Node* root)
         inc += solve(root->right->left) + solve(root->right->right);
     }
 
+
     int exc = solve(root->left) + solve(root->right);
 
     return mp[root] = max(inc, exc);
