@@ -14,24 +14,6 @@ struct Node
     }
 };
 
-Node *newNode(int data)
-{
-    Node *temp = new Node(data);
-
-    return temp;
-}
-
-void displayList(Node *head)
-{
-    //Head to Tail
-    while (head->next)
-    {
-        cout << head->data << " ";
-        head = head->next;
-    }
-    cout << head->data;
-    cout << endl;
-}
 
 int pairSum(Node *head, int sum)
 {
@@ -80,36 +62,4 @@ int tripletSum(Node *head, int sum)
         front = front->next;
     }
     return count;
-}
-
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-        Node *head = NULL, *tail = NULL;
-        int x;
-        cin >> x;
-        head = newNode(x);
-        tail = head;
-
-        for (int i = 0; i < n - 1; i++)
-        {
-            cin >> x;
-            Node *temp = newNode(x);
-            tail->next = temp;
-            temp->prev = tail;
-            tail = temp;
-        }
-        cout << "Doubly LL : ";
-        displayList(head);
-
-        int sum;
-        cin >> sum;
-        cout << tripletSum(head, sum) << endl;
-    }
-    return 0;
 }

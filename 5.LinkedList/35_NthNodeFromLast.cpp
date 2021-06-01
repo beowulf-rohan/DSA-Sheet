@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 struct Node
@@ -13,35 +11,6 @@ struct Node
         next = NULL;
     }
 };
-
-int getNthFromLast(struct Node *head, int n);
-
-int main()
-{
-    int T, i, n, l, k;
-
-    cin >> T;
-
-    while (T--)
-    {
-        struct Node *head = NULL, *tail = NULL;
-
-        cin >> n >> k;
-        int firstdata;
-        cin >> firstdata;
-        head = new Node(firstdata);
-        tail = head;
-        for (i = 1; i < n; i++)
-        {
-            cin >> l;
-            tail->next = new Node(l);
-            tail = tail->next;
-        }
-
-        cout << getNthFromLast(head, k) << endl;
-    }
-    return 0;
-}
 
 int getNthFromLast(Node *head, int n)
 {

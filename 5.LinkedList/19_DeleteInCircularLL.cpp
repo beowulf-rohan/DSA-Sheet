@@ -15,45 +15,6 @@ struct Node
     }
 };
 
-Node *input()
-{
-    Node *head = NULL;
-    Node *tail = NULL;
-
-    int n;
-    cin >> n;
-
-    while (n--)
-    {
-        int num;
-        cin >> num;
-        Node *newNode = new Node(num);
-        if (head == NULL)
-        {
-            head = newNode;
-            tail = newNode;
-        }
-        else
-        {
-            tail->next = newNode;
-            tail = tail->next;
-        }
-    }
-    tail->next = head;
-    return head;
-}
-
-void print(Node *head)
-{
-    Node *temp = head;
-    do
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    } while (temp != head);
-    cout << endl;
-}
-
 Node *deleteNode(Node *head)
 {
     if (head == NULL)
@@ -101,21 +62,4 @@ Node *deleteNode(Node *head)
     }
 
     return head;
-}
-
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        Node *head = input();
-        cout << "LL : ";
-        print(head);
-
-        head = deleteNode(head);
-        cout << "After deletion : ";
-        print(head);
-    }
-    return 0;
 }

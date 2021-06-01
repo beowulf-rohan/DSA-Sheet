@@ -20,10 +20,13 @@ void heapify(int arr[], int n, int i)
     }
 }
 
-void buildHeap(int arr[], int n)
-{ 
-    for (int i = n / 2 - 1; i >= 0; i--)
+void buildHeap(int* arr, int n)
+{
+    int temp = (n-1)/2;
+    for(int i = temp; i >= 0; i--)
+    {
         heapify(arr, n, i);
+    }
 }
 
 void heapSort(int arr[], int n)
