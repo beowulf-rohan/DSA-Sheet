@@ -36,26 +36,3 @@ int StackQueue :: pop()
     s2.pop();
     return toDel;
 }
-
-int StackQueue :: pop()
-{
-    if(s1.size() == 0 && s2.size() == 0)
-        return -1;
-    
-    while(s1.size() != 0)
-    {
-        s2.push(s1.top());
-        s1.pop();
-    }
-    
-    int toDel = s2.top();
-    s2.pop();
-        
-    while(s2.size() != 0)
-    {
-        s1.push(s2.top());
-        s2.pop();
-    }
-        
-    return toDel;
-}

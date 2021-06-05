@@ -53,7 +53,7 @@ long long getMaxArea(long long arr[], int n)
 {
     // Smallest Left.....
     stack<int> s1;
-    vector<long long int> left(n);
+    vector<int> left(n);
     for(int i = 0; i < n; i++)
     {
         while(s1.size() != 0 && arr[s1.top()] >= arr[i])
@@ -69,7 +69,7 @@ long long getMaxArea(long long arr[], int n)
         
     // Smallest Right....
     stack<int> s2;
-    vector<long long int> right(n);
+    vector<int> right(n);
     for(int i = n-1; i >= 0; i--)
     {
         while(s2.size() != 0 && arr[s2.top()] >= arr[i])

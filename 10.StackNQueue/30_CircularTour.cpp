@@ -11,7 +11,7 @@ struct petrolPump
 int tour(petrolPump p[],int n)
 {
     int totalPetrol = 0, petrol = 0, s = 0;
-   for(int i = 0; i < n; i++)
+    for(int i = 0; i < n; i++)
     {
        totalPetrol += p[i].petrol - p[i].distance;
        petrol += p[i].petrol - p[i].distance;

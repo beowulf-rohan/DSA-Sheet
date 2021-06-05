@@ -3,27 +3,26 @@ using namespace std;
 
 
 // TC - O(n).... SC - O(1)....
+
 int minElement;
 void push(stack<int>& s, int a)
 {
 	if(s.size() == 0)
 	{
-	    s.push(a);
 	    minElement = a;
+	    s.push(a);
 	    return;
 	}
 	
 	if(a >= minElement)
-	{
 	    s.push(a);
-	}
 	else
 	{
-	    minElement = a;
 	    s.push(2*a - minElement);
+	    minElement = a;
 	}
 }
-
+ 
 int pop(stack<int>& s)
 {
 	if(s.size() == 0)
@@ -44,14 +43,6 @@ int pop(stack<int>& s)
 	}
 }
 
-int getTop(stack<int>& s)
-{
-    if(s.top() >= minElement)
-        return s.top();
-    else
-        return minElement;
-}
-
 int getMin(stack<int>& s)
 {
 	if(s.size() == 0)
@@ -59,6 +50,13 @@ int getMin(stack<int>& s)
 	return minElement;
 }
 
+int getTop(stack<int>& s)
+{
+    if(s.top() >= minElement)
+        return s.top();
+    else
+        return minElement;
+}
 
 // TC - O(n).... SC - O(n)....
 stack<int> minStack;
