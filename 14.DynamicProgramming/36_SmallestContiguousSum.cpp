@@ -8,7 +8,7 @@ int maxSubarraySum(int arr[], int n)
     {
         sum += arr[i];
         minSum = min(minSum, sum);
-    if(sum > 0)
+        if(sum > 0)
             sum = 0;
     }
     return minSum;

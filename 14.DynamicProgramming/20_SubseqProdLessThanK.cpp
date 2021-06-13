@@ -11,7 +11,7 @@ int ProdLessThanK(int* arr, int n, int k)
         for(int j = 1; j <= n; j++)
         {
             dp[i][j] = dp[i][j-1];
-            if(arr[j-1] <= i && dp[j-1] > 0)
+            if(arr[j-1] <= i && arr[j-1] > 0)
                 dp[i][j] += dp[i/arr[j-1]][j-1] + 1;
         }
     }

@@ -15,11 +15,9 @@ bool check(int* arr, int n, int m, int pages)
             count++;
             sum = arr[i];
         }
-        if(count > m)
-            return false;
     }
     
-    return true;
+   return (count <= m);
 }
 
 int findPages(int *arr, int n, int m)

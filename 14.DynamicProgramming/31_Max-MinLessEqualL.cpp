@@ -20,11 +20,12 @@ int solve(int* arr, int i, int j, int k)
     if(arr[j] - arr[i] <= k)
         return dp[i][j] = 0;
 
-    return dp[i][j] = 1 + min(solve(arr, i+1, j, k), solve(arr, i, j+1, k));
+    return dp[i][j] = 1 + min(solve(arr, i+1, j, k), solve(arr, i, j-1, k));
 }
 
 int minRemoval(int* arr, int n, int k)
 {
+    sort(arr, arr+n);
     memset(dp, -1, sizeof(dp));
     return solve(arr, 0, n-1, k);
 }

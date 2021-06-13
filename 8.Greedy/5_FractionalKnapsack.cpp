@@ -33,6 +33,7 @@ double fractionalKnapsack(int W, Item arr[], int n)
             break;
         }        
     }
+    return maxValue;
 }
 
 int main()
