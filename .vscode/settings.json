@@ -9,6 +9,7 @@
         "stack": "cpp",
         "random": "cpp",
         "limits": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "TEPM.C": "cpp"
     }
 }
