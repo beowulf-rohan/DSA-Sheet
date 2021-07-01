@@ -6,7 +6,7 @@ using namespace std;
 
 typedef long long int ll;
 
-int divide(int a, int b)
+int divide(int A, int B)
 {
     int sign = ((A < 0) ^ (B < 0)) ? -1 : 1;
     long long int dividend = A, divisor = B;
