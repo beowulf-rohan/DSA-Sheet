@@ -6,26 +6,27 @@ using namespace std;
 
 typedef long long int ll;
 
-ll divide(ll dividend, ll divisor)
+int divide(int a, int b)
 {
-    int sign = ((dividend<0)^(divisor<0)) ? -1:1;
-    
-    dividend = abs(dividend);
-    divisor = abs(divisor);
-    
- 
-    ll ans = 0, temp = 0;
+    int sign = ((A < 0) ^ (B < 0)) ? -1 : 1;
+    long long int dividend = A, divisor = B;
+    long long int quotient = 0, sum = 0;
+
+    dividend = abs(dividend);       divisor = abs(divisor);
+
     for(int i = 31; i >= 0; i--)
     {
-        if(temp + (divisor<<i) <= dividend)
+        if(sum + (divisor << i) <= dividend)
         {
-            temp += (divisor<<i);
-            ans |= (1LL<<i);
+            sum += (divisor << i);
+            quotient |= (1LL<<i);
         }
     }
+
+    if(sign < 0)
+        quotient = -quotient;
     
-    ans *= sign;
-    return (ans >= INT32_MAX || ans <= INT32_MIN) ? INT32_MAX:ans;
+    return (quotient >= INT_MAX || quotient < INT_MIN) ? INT_MAX : quotient;
 }
 
 int main()

@@ -20,7 +20,7 @@ void frequencyCount(vector<int>& arr,int N, int p)
     	}
     }
     for (int i = 0; i < ind ; i++) 
-    	arr[arr[i]%N] += + N; 
+    	arr[arr[i]%N] += N; 
     
     for (int i = 0; i < N; i++) 
 		arr[i] = arr[i]/N;        
