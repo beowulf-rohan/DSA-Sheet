@@ -32,8 +32,8 @@ void insert(int temp, stack<int> &s)
     
     int x = s.top();
     s.pop();
-
     insert(temp, s);
+
     s.push(x);
 }
 
@@ -44,5 +44,6 @@ void sort(stack<int> &s)
     int temp = s.top();
     s.pop();
     sort(s);
+    
     insert(temp, s);
 }

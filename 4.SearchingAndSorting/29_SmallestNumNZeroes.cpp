@@ -36,20 +36,3 @@ int findNum(int n)
     }
     return ans;
 }
-            
-          
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        cout << findNum(n) << endl;
-    }
-    return 0;
-}

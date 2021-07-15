@@ -38,23 +38,3 @@ int sumNoAdjacent(ll* arr, int n)
 
     return max(currIncluded, currExcluded);
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        ll arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        cout << sumNoAdjacent(arr, n) << endl;
-    }
-	return 0;
-}

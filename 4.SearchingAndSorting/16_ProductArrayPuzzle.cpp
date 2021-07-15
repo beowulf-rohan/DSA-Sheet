@@ -24,27 +24,3 @@ vector<ll> prodPuzzle(vector<ll> arr, int n)
     }
     return prod;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        vector<ll> arr(n);
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        vector<ll> prod =  prodPuzzle(arr, n);
-        for(int i = 0; i < n; i++)
-        {
-            cout << prod[i] << " ";
-        }
-    }
-	return 0;
-}

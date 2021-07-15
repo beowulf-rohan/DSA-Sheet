@@ -1,12 +1,8 @@
-#include<iostream>
-#include<algorithm>
-
+#include<bits/stdc++.h>
 using namespace std;
-
 struct job
 {
     int a, d, p;
-    // a - arrival Time.... d - Departure Time.... p - profit....
 };
 
 bool compare(struct job a, struct job b)
@@ -51,27 +47,4 @@ int jobSheduling(job* arr, int n)
     int ans = dp[n-1];
     delete [] dp;
     return ans;
-}
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        job arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i].a >> arr[i].d >> arr[i].p;
-        }
-
-        sort(arr, arr+n, compare);
-
-        cout << jobSheduling(arr, n) << endl;
-    }
-    return 0;
 }

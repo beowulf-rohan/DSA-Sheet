@@ -24,22 +24,3 @@ ll findSubarray(vector<ll> arr, int n )
     }
     return count;
 }
-
-int main()
- {
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int n;
-        cin>>n;
-       
-        vector<ll> arr(n,0);
-        
-        for(int i=0;i<n;i++)
-            cin>>arr[i];
-        
-        cout << findSubarray(arr,n) << endl;
-    }
-	return 0;
-}

@@ -2,8 +2,8 @@
 using namespace std;
 
 int kthElement(int arr1[], int arr2[], int m, int n, int k)
-    {
-        if(k > m+n || k == 0)
+{
+    if(k > m+n || k == 0)
         return -1;
     if(m > n)
         return kthElement(arr2, arr1, n, m, k);

@@ -44,28 +44,3 @@ vector<vector<int>> fourSum(vector<int> &arr, int k)
     
     return nums;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n, k;
-        cin >> n >> k;
-
-        vector<int> arr(n);
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        vector<vector<int>> ans = fourSum(arr, k);
-
-        for(int i = 0; i < ans.size(); i++)
-        {
-            cout << ans[i][0] << " " << ans[i][1] << " "  << ans[i][2] << " "  << ans[i][3] << endl;
-        }
-    }
-    return 0;
-}

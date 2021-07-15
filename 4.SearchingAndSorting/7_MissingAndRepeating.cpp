@@ -30,26 +30,3 @@ int *findTwoElement(int *arr, int n)
     a[1] = miss;
     return a;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        int arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        int* res = findTwoElement(arr, n);
-
-        cout << res[0] << " " << res[1] << endl;
-    }
-    return 0;
-}

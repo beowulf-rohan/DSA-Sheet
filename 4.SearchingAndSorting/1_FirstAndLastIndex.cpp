@@ -59,23 +59,3 @@ void solve(int* arr, int n, int x)
         return;
     }
 }
-
-int main()
- {
-	int t;
-	cin >> t;
-	while(t--)
-	{
-	    int n, x;
-	    cin >> n >> x;
-	    
-	    int a[n];
-	    for(int i = 0; i < n; i++)
-	    {
-	        cin >> a[i];
-	    }
-	    
-	    solve(a, n, x);
-	}
-	return 0;
-}

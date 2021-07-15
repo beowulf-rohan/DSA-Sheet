@@ -31,24 +31,3 @@ int missingAP(int* arr, int n)
     }
     return ans;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        int arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        cout << missingAP(arr, n) << endl;
-    }
-    return 0;
-}

@@ -28,24 +28,3 @@ int bSearch(vector<int>nums, int l, int r, int X)
             return bSearch(nums, l, mid-1, X);
     }
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n, target;
-        cin >> n >> target;
-
-        vector<int> nums(n);
-        for(int i = 0; i < n; i++)
-        {
-            cin >> nums[i];
-        }
-
-        cout << bSearch(nums, 0, n-1, target) << endl;
-    }
-    return 0;
-}

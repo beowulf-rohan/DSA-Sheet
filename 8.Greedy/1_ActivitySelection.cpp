@@ -41,13 +41,3 @@ int activitySelection()
     }
     return count;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        cout << activitySelection() << endl;
-    }
-}

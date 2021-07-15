@@ -31,24 +31,3 @@ ll countTriplets(ll arr[], int n, ll sum)
 	}
     return count;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n, sum;
-        cin >> n >> sum;
-
-        ll arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        cout << countTriplets(arr, n, sum) << endl;
-    }
-    return 0;
-}	                

@@ -19,7 +19,7 @@ class twoStacks
 };
 
 
-void twoStacks :: push1(int x)      /* The method push to push element into the stack 2 */
+void twoStacks :: push1(int x)      /* The method push to push element into the stack 1 */
 {
     if(top1 == top2)
         return;

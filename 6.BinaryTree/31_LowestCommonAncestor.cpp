@@ -34,6 +34,4 @@ Node* lca(Node* root ,int n1 ,int n2 )
         return leftNode;
     else
         return rightNode;
-    
-    
 }

@@ -3,7 +3,6 @@ using namespace std;
 
 
 // TC - O(n).... SC - O(1)....
-
 int minElement;
 void push(stack<int>& s, int a)
 {
