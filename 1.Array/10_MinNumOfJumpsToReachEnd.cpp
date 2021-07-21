@@ -1,9 +1,7 @@
 #include<iostream>
-
 using namespace std;
 
-// TC - O(n2).... SC - O(n)
-
+// TC - O(n2).... SC - O(n) 
 int minJumps(int arr[], int n)
 {
     if(n < 1)
@@ -37,7 +35,6 @@ int minJumps(int arr[], int n)
 }
 
 // TC - O(n).... SC - O(n)
-
 int minJumps(int* arr, int n)
 {  
     if (n <= 1) 
@@ -46,10 +43,9 @@ int minJumps(int* arr, int n)
     if (arr[0] == 0) 
         return -1; 
   
-    int maxReach = arr[0], step = arr[0], jump =1;
-  
-    int i=1; 
-    for (i = 1; i < n; i++) 
+    int maxReach = arr[0], step = arr[0], jump = 1;
+
+    for (int i = 1; i < n; i++) 
     { 
         if (i == n-1) 
             return jump; 
@@ -58,30 +54,11 @@ int minJumps(int* arr, int n)
   
         if (step == 0) 
         { 
-            jump++; 
-            if(i >= maxReach) 
-                return -1; 
-            step = maxReach - i; 
-        } 
-    }
-    return -1; 
-}
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        int arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
+            jump++;
+            step = maxReach - i;
+            if(i >= maxReach)
+                return -1;
         }
-
-        cout << minJumps(arr, n) << endl;
     }
+    return -1;
 }

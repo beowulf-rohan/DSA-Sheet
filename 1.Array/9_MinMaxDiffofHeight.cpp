@@ -3,52 +3,20 @@
 
 using namespace std;
 
-class Solution
+
+int getMinDiff(int arr[], int n, int k) 
 {
-public:
-    int getMinDiff(int a[], int n, int k)
+    int maxE, minE, minDiff;
+    sort(arr, arr+n);
+    minDiff = arr[n-1] - arr[0];
+    for(int i = 1; i < n; i++)
     {
-        sort(a, a + n);
-
-        int small = a[0] + k;
-        int big = a[n - 1] - k;
-
-        if (small > big)
-            swap(small, big);
-
-        for (int i = 1; i < n - 1; i++)
+        if(arr[i] >= k)
         {
-            int sub = a[i] - k;
-            int add = a[i] + k;
-
-            if (sub >= small || add <= big)
-                continue;
-            if (big - sub <= add - small)
-                small = sub;
-            else
-                big = add;
+            maxE = max(arr[n-1]-k, arr[i-1]+k);
+            minE = min(arr[0]+k, arr[i]-k);
+            minDiff = min(minDiff, maxE-minE);
         }
-        return min(a[n - 1] - a[0], big - small);
     }
-};
-
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n, k;
-        cin >> k;
-        cin >> n;
-        int arr[n];
-        for (int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-        Solution ob;
-        auto ans = ob.getMinDiff(arr, n, k);
-        cout << ans << "\n";
-    }
-    return 0;
+    return minDiff;       
 }
