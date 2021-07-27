@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 typedef pair<int,char> pp;
 
 string reorganizeString(string S) 

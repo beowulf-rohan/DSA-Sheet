@@ -55,7 +55,7 @@ int KthSmallestElement(Node *root, int k)
     return -1;
 }
 
-// SC - O(n).... TC - O(h)....
+// TC - O(n).... SC - O(h)....
 Node* KthSmallest(Node* root, int &k)
 {
     if(root == NULL)

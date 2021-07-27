@@ -17,7 +17,7 @@ class Node
 
 typedef pair<int, Node*> pp;
 
-Node * mergeKLists(Node *arr[], int k)
+Node* mergeKLists(Node *arr[], int k)
 {
     priority_queue<pp, vector<pp>, greater<pp>> pq;
     Node* head = NULL, *tail = NULL;
@@ -26,7 +26,7 @@ Node * mergeKLists(Node *arr[], int k)
     {
         pq.push({arr[i]->data, arr[i]});
     }
-           
+    
     while(pq.size() != 0)
     {
         pp curr = pq.top();
@@ -50,5 +50,6 @@ Node * mergeKLists(Node *arr[], int k)
             pq.push({toPush->data, toPush});
         }
     }
+
     return head;
 }

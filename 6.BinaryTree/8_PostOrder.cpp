@@ -56,8 +56,8 @@ void preOrder(Node* root)
     
     while(!out.empty())
     {
-        cout << st.top() << " ";
-        st.pop();
+        cout << out.top() << " ";
+        out.pop();
     }
 
 }

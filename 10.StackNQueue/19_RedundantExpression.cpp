@@ -23,7 +23,6 @@ bool redundance(string s)
 
             if(flag == true)
                 return true;
-
         }
         else
         {

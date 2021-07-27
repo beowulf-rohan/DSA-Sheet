@@ -64,7 +64,6 @@ int maximalRectangle(vector<vector<char>>& matrix)
             else
                 arr[j] = 0;
         }
-        
         maxArea = max(maxArea, getMaxArea(arr, m));
     }
     return maxArea;
