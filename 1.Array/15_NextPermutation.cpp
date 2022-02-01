@@ -5,34 +5,38 @@
 
 using namespace std;
 
-void nextPermutation(vector<int>& nums)
+void solve(string s)
 {
-    int n = nums.size();
-    if(n == 0 || n == 1)
-        return;
-        
+    string str = s;
+
+    int n = s.size();
     int k;
     for(k = n-2; k >= 0; k--)
     {
-        if(nums[k] < nums[k+1])
+        if(s[k] < s[k+1])
             break;
     }
         
     if(k < 0)
     {
-        reverse(nums.begin(), nums.end());
+        reverse(s.begin(), s.end());
     }
     else
     {
         int l;
         for(l = n-1; l > k; l--)
         {
-            if(nums[k] < nums[l])
+            if(s[k] < s[l])
                 break;
         }
-        swap(nums[k], nums[l]);
-        reverse(nums.begin()+k+1, nums.end());
+        swap(s[k], s[l]);
+        reverse(s.begin()+k+1, s.end());
     }
+
+    if(s == str)
+        cout << s << endl;
+    else 
+        cout << "no answer" << endl;
 }
 
 int main()

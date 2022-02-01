@@ -3,37 +3,33 @@ using namespace std;
 
 
 // TC - O(V + E).... SC - O(V)....
-bool checkCycle(vector<int>* &adj, bool* visited, int sv, int parent)
+bool checkCycle(vector<int>* adj, int currV, int parent, bool* visited)
 {
-    visited[sv] = true;
-        
-    for(int i = 0; i < adj[sv].size(); i++)
+    visited[currV] = true;
+    for(int i = 0; i < adj[currV].size(); i++)
     {
-        int nextSv = adj[sv][i];
-        if(!visited[nextSv])
+        int nextV = adj[currV][i];
+        if(!visited[nextV])
         {
-            if(checkCycle(adj, visited, nextSv, sv))
+            if(checkCycle(adj, nextV, currV, visited))
                 return true;
         }
-        else if(nextSv != parent)
+        else if(nextV != parent)
             return true;
     }
     return false;
 }
     
-bool isCycle(int V, vector<int>* adj)
+bool isCycle(int V, vector<int> adj[]) 
 {
-    bool* visited = new bool[V];
-	for(int i = 0; i < V; i++)
-	{
-	    visited[i] = false;
-	}
-	    
-	for(int i = 0; i < V; i++)
+    bool visited[V] = {0};
+    for(int i = 0; i < V; i++)
     {
-	    if(!visited[i] && checkCycle(adj, visited, i, -1))
-	        return true;
-	}
-	    
-	return false;
+        if(!visited[i])
+        {
+            if(checkCycle(adj, i, -1, visited))
+                return true;
+        }
+    }
+    return false;
 }

@@ -1,5 +1,5 @@
 #include<iostream>
-#include<vector>
+#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -114,3 +114,52 @@ int countPairs(Node* root1, Node* root2, int x)
     
     return countPair(a, b, x);
 }
+
+class Solution {
+public:
+    bool findTarget(Node* root, int k) 
+    {
+        stack <Node*> l, r;
+        Node* curr = root;
+        while(curr)
+        {
+            l.push(curr);
+            curr = curr->left;
+        }
+        curr = root;
+        while(curr)
+        {
+            r.push(curr);
+            curr = curr->right;
+        }
+        
+        while(l.top() != r.top())
+        {
+            int sum = l.top()->data + r.top()->data;
+            if(sum == k)
+                return true;
+            else if(sum < k)
+            {
+                curr = l.top()->right;
+                l.pop();
+                while(curr)
+                {
+                    l.push(curr);
+                    curr = curr->left;
+                }
+            }
+            else
+            {
+                curr = r.top()->left;
+                r.pop();
+                while(curr)
+                {
+                    r.push(curr);
+                    curr = curr->right;
+                }
+            }
+        }
+        
+        return false;
+    }
+};

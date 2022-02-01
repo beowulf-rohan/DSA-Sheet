@@ -24,20 +24,18 @@ void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
     
     if(root->data == key)
     {
-        if(root->left != NULL)
+        Node* preItr = root->left;
+        while(preItr)
         {
-            Node* temp = root->left;
-            while(temp->right != NULL)
-                temp = temp->right;
-            pre = temp;
+            pre = preItr;
+            preItr = preItr->right;
         }
-        
-        if(root->right != NULL)
+
+        Node* sucItr = root->right;
+        while(sucItr)
         {
-            Node* temp = root->right;
-            while(temp->left != NULL)
-                temp = temp->left;
-            suc = temp;
+            suc = sucItr;
+            sucItr = sucItr->left;
         }
         return;
     }

@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 // TC - O(32*rlogc).... SC - O(1)....
 int findMedian(vector<vector<int>> &arr)
 {

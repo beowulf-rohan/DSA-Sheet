@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int findMedianSortedArrays(const vector<int> &A, const vector<int> &B)
 {
     int x = A.size(), y = B.size();

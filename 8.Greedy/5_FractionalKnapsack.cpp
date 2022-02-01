@@ -55,3 +55,88 @@ int main()
 	}
     return 0;
 } 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+class traits{
+    public:
+    ll a;
+    ll b;
+};
+
+void solve(){
+    int n; cin>>n;
+    traits *arr = new traits[n];
+    
+    for(int i=0;i<n;i++){
+        cin>>arr[i].a>>arr[i].b;
+    }
+    
+    ll *health = new ll[n];
+    for(int i=0;i<n;i++){
+        health[i] = 0;
+    }
+    
+    for(int i=0;i<n;i++){
+        if(i==0){
+            if(arr[i].a > arr[n-1].b){
+                health[i] = arr[i].a - arr[n-1].b;
+            }
+            else
+                health[i] = 0;
+        }
+        
+        else{
+            if(arr[i-1].b > arr[i].a){
+                health[i] = 0;
+            }
+            else{
+                health[i] = arr[i].a - arr[i-1].b;
+            }
+        }
+    }
+    
+    
+    
+    ll first = INT_MAX;
+    ll val = 0;
+    int index = 0;
+    
+    for(int i=0;i<n;i++){
+        val = arr[i].a - health[i];
+        if(val < first){
+            first = val;
+            index = i;
+        }
+    }
+    
+    
+    ll ans = 0;
+    
+    for(int i=0;i<n;i++){
+        if(i==index){
+            continue;
+        }
+        else{
+            ans += health[i];
+        }
+    }
+
+    cout<<ans + arr[index].a<<endl;
+    
+}
+
+
+int main(){
+    
+    // write your code here
+    int t;
+    cin>>t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}

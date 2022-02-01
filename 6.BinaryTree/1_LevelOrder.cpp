@@ -15,7 +15,7 @@ vector<int> levelOrder(Node* node)
     if(node == NULL)
         return v;
     
-      queue<Node*> pending;
+    queue<Node*> pending;
   
     pending.push(node);
     v.push_back(node->data);

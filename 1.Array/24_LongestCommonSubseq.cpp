@@ -1,24 +1,7 @@
 #include <bits/stdc++.h>
-
+#include <unordered_map>
 using namespace std;
 
-int findLongestConseqSubseq(int arr[], int n);
-
-int main()
-{
-    int t, n, i, a[100001];
-    cin >> t;
-    while (t--)
-    {
-        cin >> n;
-        for (i = 0; i < n; i++)
-            cin >> a[i];
-        cout << findLongestConseqSubseq(a, n) << endl;
-    }
-
-    return 0;
-}
-#include <unordered_map>
 int findLongestConseqSubseq(int arr[], int n)
 {
     unordered_map<int, bool> map;
