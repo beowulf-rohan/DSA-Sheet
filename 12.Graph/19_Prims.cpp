@@ -1,6 +1,70 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Adjacecy List....
+class Solution
+{
+	public:
+	//Function to find sum of weights of edges of the Minimum Spanning Tree.
+	int getMin(int* weight, bool* visited, int n)
+	{
+	    int minVertex = -1;
+	    for(int i = 0; i < n; i++)
+	    {
+	        if(!visited[i] && (minVertex == -1 || weight[i] < weight[minVertex]))
+	            minVertex = i;
+	    }
+	    return minVertex;
+	}
+	
+    int spanningTree(int V, vector<vector<int>> adj[])
+    {
+        //int* parent = new int[V];
+        bool* visited = new bool[V];
+        int* weight = new int[V];
+        
+        for(int i = 0; i < V; i++)
+        {
+            weight[i] = INT_MAX;
+            visited[i] = false;
+        }
+        
+        //parent[0] = -1;
+        weight[0] = 0;
+        
+        int count = 0;
+        while(count != V-1)
+        {
+            int minVertex = getMin(weight, visited, V);
+            visited[minVertex] = true;
+            for(int i = 0; i < adj[minVertex].size(); i++)
+            {
+                int nextV = adj[minVertex][i][0], wt = adj[minVertex][i][1];
+                if(!visited[nextV] && weight[nextV] > wt)
+                {
+                    weight[nextV] = wt;
+                    //parent[nextV] = minVertex;
+                }
+            }
+            count++;
+        }
+        
+        int sum = 0;
+        for(int i = 0; i < V; i++)
+        {
+            sum += weight[i];
+        }
+        
+        delete [] weight;
+        delete [] visited;
+        //delete [] parent;
+        
+        return sum;
+    }
+};
+
+
+// Adjacecy Matrix....
 int findMinVertex(bool* visited, int* weights, int n)
 {
     int minVertex = -1;
