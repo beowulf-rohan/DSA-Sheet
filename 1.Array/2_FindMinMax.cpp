@@ -19,7 +19,7 @@ Pair solve(int* arr, int n)
         else
         {
             minmax.max = arr[1]; minmax.min = arr[0];
-        }
+        }   
         i = 2;
     }
     else
@@ -47,22 +47,4 @@ Pair solve(int* arr, int n)
         i += 2;
     }
     return minmax;
-}
-
-int main()
-{
-    int n;
-    cin >> n;
-
-    int a[n];
-    for(int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-
-    Pair minmax = solve(a, n);
-
-    cout << minmax.min << " " << minmax.max;
-
-    return 0;
 }

@@ -22,29 +22,3 @@ void rearrange(int* arr, int n)
         negIndex+=1;    posIndex+=2;
     }
 }
-
-
-int main()
-{
-    int t;
-    cin >> t;
-
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        int a[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-
-        rearrange(a, n);
-
-        for(int i = 0; i < n; i++)
-        {
-            cout << a[i] << " ";
-        }cout << endl;
-    }
-}

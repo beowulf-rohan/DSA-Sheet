@@ -60,26 +60,3 @@ long long int inversionCount(long long arr[], long long N)
 {
     return mergeSort(arr, 0, N - 1);
 }
-
-int main()
-{
-
-    long long T;
-    cin >> T;
-
-    while (T--)
-    {
-        long long N;
-        cin >> N;
-
-        long long A[N];
-        for (long long i = 0; i < N; i++)
-        {
-            cin >> A[i];
-        }
-
-        cout << inversionCount(A, N) << endl;
-    }
-
-    return 0;
-}

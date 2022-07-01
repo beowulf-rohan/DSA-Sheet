@@ -40,24 +40,3 @@ void arrange(int arr[], int n)
         arr[i] /= n;
     }
 }
-
-
-int main()
-{
-    int n;
-    cin >> n;
-
-    int arr[n];
-    for(int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-
-    arrange(arr, n);
-
-    for(int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    return 0;
-}

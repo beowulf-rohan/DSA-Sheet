@@ -36,24 +36,3 @@ int findMedianSortedArrays(const vector<int> &A, const vector<int> &B)
         }
     }
 }
-
-int main()
-{
-    int n, m;
-    cin >> m >> n;
-
-    vector<int> A(m);
-    vector<int> B(n);
-    for (int i = 0; i < m; i++)
-    {
-        cin >> A[i];
-    }
-    for (int i = 0; i < n; i++)
-    {
-        cin >> B[i];
-    }
-
-    cout << findMedianSortedArrays(A, B)  << endl;
-
-    return 0;
-}

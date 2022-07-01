@@ -41,18 +41,3 @@ void factorial(int n)
     }
     cout << endl;
 }
-
-int main()
- {
-	int t;
-	cin >> t;
-	
-	while(t--)
-	{
-	    int n;
-	    cin >> n;
-	    factorial(n);
-	}
-	
-	return 0;
-}

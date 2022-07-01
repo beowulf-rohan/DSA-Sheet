@@ -16,23 +16,3 @@ int maxProfit(vector<int>& prices)
     }
     return maxProfit;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        vector<int> prices(n);
-        for(int i = 0; i < n; i++)
-        {
-            cin >> prices[i];
-        }
-
-        cout << maxProfit(prices) << endl;
-    }
-    return 0;
-}

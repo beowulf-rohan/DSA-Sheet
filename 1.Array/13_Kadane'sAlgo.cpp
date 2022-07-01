@@ -14,23 +14,3 @@ long long int kadanes(int *arr, int n)
     }
     return maxSum;
 }
-
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int n;
-        cin >> n;
-
-        int a[n];
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-
-        cout << kadanes(a, n) << endl;
-    }
-    return 0;
-}

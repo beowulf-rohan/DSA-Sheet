@@ -3,7 +3,7 @@
 using namespace std;
 
 //TC - O(n2).... SC - O(1).....
-/*int rainWater(int* arr, int n)
+int rainWater(int* arr, int n)
 {
     int res = 0;
     for(int i = 1; i < n-1; i++)
@@ -22,7 +22,7 @@ using namespace std;
         res += (min(left, right) - curr);
     }
     return res;
-}*/
+}
 
 //TC - O(n)..... SC - O(n).....
 int rainWater(int arr[], int n)
@@ -51,28 +51,7 @@ int rainWater(int arr[], int n)
 }
 
 //TC - O(n)..... SC - O(1).....
-/*int rainWater(int* arr, int n)
+int rainWater(int* arr, int n)
 {
 
-}*/
-
-
-int main()
-{
-    int t;
-    cin >> t;
-    while(t--)
-    {
-        int n;
-        cin >> n;
-
-        int arr[n];
-        for(int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-        }
-
-        cout << rainWater(arr, n) << endl;
-    }
-    return 0;
 }

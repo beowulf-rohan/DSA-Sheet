@@ -25,24 +25,3 @@ vector<vector<int>> merge(vector<vector<int>> &intervals)
     }
     return ans;
 }
-
-int main()
-{
-    vector<vector<int>> intervals;
-    vector<int> pair(2);
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> pair[0] >> pair[1];
-        intervals.push_back(pair);
-    }
-
-    vector<vector<int>> ans = merge(intervals);
-    for (int i = 0; i < ans.size(); i++)
-    {
-        cout << ans[i][0] << " " << ans[i][1] << endl;
-    }
-
-    return 0;
-}

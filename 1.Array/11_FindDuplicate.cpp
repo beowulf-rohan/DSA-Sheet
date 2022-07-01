@@ -1,5 +1,4 @@
-#include <iostream>
-#include<vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -24,18 +23,14 @@ int findDuplicate(vector<int> &nums)
     return slow;
 }
 
-int main()
+int findDuplicate(vector<int> &nums)
 {
-    int n;
-    cin >> n;
-
-    vector<int> nums(n);
-    for (int i = 0; i < n; i++)
+    for(int i = 0; i < nums.size(); i++)
     {
-        cin >> nums[i];
+        int idx = abs(nums[i]);
+        if(nums[idx] < 0)
+            return idx;
+        nums[idx] = -nums[idx];
     }
-
-    cout << findDuplicate(nums);
-
-    return 0;
+    return -1;
 }
