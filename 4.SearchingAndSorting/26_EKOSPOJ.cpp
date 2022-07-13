@@ -10,10 +10,8 @@ bool check(ll* arr, int n, ll m, ll ht)
 	{
 		if(arr[i] > ht)
 			cutSum += (arr[i]-ht);
-		if(cutSum >= m)
-		    return true;
 	}
-		return false;
+		return (cutSum >= m);
 }
  
 int main()

@@ -28,7 +28,6 @@ vector<vector<int>> fourSum(vector<int> &arr, int k)
                     
                     nums.push_back(v);
                     
-                    
                     while(arr[l] == v[2] && l < r) l++;
                     while(arr[r] == v[3] && l < r) r--;
                 }

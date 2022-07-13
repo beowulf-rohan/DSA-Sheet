@@ -4,11 +4,10 @@ using namespace std;
 int setBits(int N)
 {
     int count = 0;
-    int x = 1;
     {
         for (int i = 31; i >= 0; i--)
         {
-            if ((N & (x << i)) != 0)
+            if ((N & (1 << i)) != 0)
                 count++;
         }
     }

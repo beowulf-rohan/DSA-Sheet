@@ -11,11 +11,10 @@ vector<string> AllPossibleStrings(string s)
     int size = 1 << s.size();
     for (int mask = 1; mask < size; mask++)
     {
-        int x = 1;
         string str = "";
         for (int i = 0; i < 32; i++)
         {
-            if (mask & (x << i))
+            if (mask & (1 << i))
                 str += s[i];
         }
         v.push_back(str);

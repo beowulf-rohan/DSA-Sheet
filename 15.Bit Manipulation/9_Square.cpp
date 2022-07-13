@@ -7,10 +7,9 @@ int sq(int n)
 {
     int size = log2(n) + 1;
     int ans = 0;
-    for (int i = 0; i <= size; i++)
+    for (int i = 0; i < size; i++)
     {
-        int x = 1;
-        int setBit = (x << i);
+        int setBit = (1 << i);
         if (setBit & n)
         {
             ans += (n << i);

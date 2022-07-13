@@ -26,7 +26,5 @@ int *findTwoElement(int *arr, int n)
     ll repeat = (sum+diff)/2;
     ll miss = (sum-diff)/2;
     
-    a[0] = repeat;
-    a[1] = miss;
-    return a;
+    return {repeat, miss};
 }

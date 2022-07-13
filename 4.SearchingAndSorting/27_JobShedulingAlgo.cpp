@@ -32,6 +32,7 @@ int search(job* arr, int si, int ei, int pos)
 
 int jobSheduling(job* arr, int n)
 {
+    
     int* dp = new int[n]();
     dp[0] = arr[0].p;
 
