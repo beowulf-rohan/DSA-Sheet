@@ -7,7 +7,7 @@ struct petrolPump
     int distance;
 };
 
-// Better than second one....
+// Better
 int tour(petrolPump p[],int n)
 {
     int totalPetrol = 0, petrol = 0, s = 0;

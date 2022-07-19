@@ -54,29 +54,20 @@ Node *addOne(Node *head)
     return reverse(head);
 }
 
-/*
 Node* addOne(Node *head) 
 {
-    head = reverse(head);
-    int carry = 1;
-    Node* temp = head;
-    while(temp != NULL)
-    {
-        if(carry == 1)
-        {
-            temp->data += carry;
-            carry = (temp->data)/10;
-            temp->data %= 10;
-        }
-        if(temp->next == NULL && carry == 1)
-        {
-            Node* newNode = new Node(1);
-            temp->next = newNode;
-            carry = 0;
-        }
-        temp = temp->next;
-    }
-    head = reverse(head);
-    return head;
+   head = reverse(head);
+   Node* curr = head, *prev = NULL;
+   int carry = 1;
+   while(curr)
+   {
+        int sum = curr->data + carry;
+        curr->data = sum%10;
+        carry = sum/10;
+        prev = curr;
+        curr = curr->next;
+   }
+   if(carry)
+        prev->next = new Node(carry);
+    return reverse(head);
 }
-*/

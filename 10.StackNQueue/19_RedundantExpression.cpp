@@ -9,7 +9,7 @@ bool redundance(string s)
         int ch = s[i];
         if(ch == ')')
         {
-            int top = st.top();
+            char top = st.top();
             st.pop();
 
             bool flag = true;

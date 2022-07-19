@@ -1,44 +1,19 @@
-#include <iostream>
-#include <unordered_map>
-
+#include<unordered_map>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main()
+bool checkSubset(vector < int > & arr1, vector < int > & arr2, int n, int m)
 {
-    int t;
-    cin >> t;
-
-    while (t--)
+    unordered_map<int, int> mp;
+    for(int i = 0; i < n; i++)
     {
-        unordered_map<int, int> mp;
-        int m, n;
-        cin >> m >> n;
-
-        bool isTrue = true;
-        for (int i = 0; i < m; i++)
-        {
-            int num;
-            cin >> num;
-            mp[num]++;
-        }
-        for (int i = 0; i < n; i++)
-        {
-            int num;
-            cin >> num;
-            if (mp[num] == 0)
-            {
-                isTrue = false;
-            }
-            else
-            {
-                mp[num]--;
-            }
-        }
-
-        if (isTrue)
-            cout << "Yes\n";
-        else
-            cout << "No\n";
+        mp[arr1[i]]++;
     }
-    return 0;
+    for(int i = 0; i < m; i++)
+    {
+        if(mp[arr2[i]] == 0)
+            return false;
+        mp[arr2[i]]--;
+    }
+    return true;
 }

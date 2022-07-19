@@ -39,7 +39,7 @@ Node * mergeKLists(Node *arr[], int k)
         }
         else
         {
-           tail->next = curr.second;
+            tail->next = curr.second;
             tail = tail->next;
         }               
 

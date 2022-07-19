@@ -1,33 +1,16 @@
-/********************************************************************
-
-    Following is the representation of the Singly Linked List Node:
-
-    class node{
-        public:
-            int data;
-            node * next;
-            node(int data){
-                this->data=data;
-                this->next=NULL;
-            }
-    };
-    
-********************************************************************/
-/****************************************************************
-    Following is the class structure of the Node class:
-    class Node
-    {
+#include<bits/stdc++.h>
+using namespace std;
+ class Node
+{
     public:
-        int data;
-        Node *next;
-        Node(int data)
-        {
-            this->data = data;
-            this->next = NULL;
-        }
-    };
-*****************************************************************/
-typedef node Node;
+    int data;
+    Node *next;
+    Node(int data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+};
 
 Node* merge(Node* l1, Node* l2)
 {
@@ -66,7 +49,7 @@ Node* getMid(Node* head)
     return mid;
 }
 
-node* mergeSort(node *head) 
+Node* mergeSort(Node *head) 
 {
     if(!head || !head->next)
         return head;

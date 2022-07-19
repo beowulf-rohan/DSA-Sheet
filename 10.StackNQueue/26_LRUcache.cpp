@@ -31,7 +31,7 @@ class LRUCache
                  {
                      if(dq.size() == size)
                      {
-                         mp.erase(dq.front());
+                         mp.erase(dq.front());      // mp[dq.front()] = -1;
                          dq.pop_front();
                      }
                      dq.push_back(key);

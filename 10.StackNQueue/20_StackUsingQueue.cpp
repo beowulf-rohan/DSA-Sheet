@@ -20,11 +20,8 @@ void QueueStack :: push(int x)
     {
         q2.push(q1.front());
         q1.pop();
-    }
-    
-    queue<int> q = q1;
-    q1 = q2;
-    q2 = q;
+    }  
+    swap(q1, q2);
 }
 
 int QueueStack :: pop()

@@ -12,26 +12,18 @@ struct Node
     }
 };
 
-Node *removeDuplicates(Node *root)
+Node * uniqueSortedList(Node * head) 
 {
-    Node* head = root;
-    Node* curr = root->next;
-    
-    while(curr != NULL)
+    Node* temp = new Node(-1);
+    temp->next = head;
+    Node* curr = head;
+    Node* prev = temp;
+    while(curr)
     {
-        if(head->data == curr->data)
-        {
-            Node* toDel = curr;
+        while(curr && (prev->data == curr->data))
             curr = curr->next;
-            toDel->next = NULL;
-            delete toDel;
-            head->next = curr;
-        }
-        else
-        {
-            head = head->next;
-            curr = curr->next;
-        }
+        prev->next = curr;
+        prev = curr;
     }
-    return root;
+    return temp->next;
 }
