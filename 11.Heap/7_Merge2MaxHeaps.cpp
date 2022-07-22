@@ -43,28 +43,3 @@ void merge(int* a, int* b, int n, int m)
         cout << merged[i] << " ";
     }cout << endl;
 }
-
-int main()
- {
-	int t;
-	cin >> t;
-	
-	while(t--)
-	{
-	    int n, m;
-	    cin >> n >> m;
-	    
-	    int a[n], b[m];
-	    for(int i = 0; i < n; i++)
-	    {
-	        cin >> a[i];
-	    }
-	    for(int j = 0; j < m; j++)
-	    {
-	        cin >> b[j];
-	    }
-	    
-	    merge(a, b, n, m);
-	}
-	return 0;
-}

@@ -9,7 +9,7 @@ int missingAP(int* arr, int n)
 
     int ans = -1;
 
-    while(si < ei)
+    while(si <= ei)
     {
         int mid = (si+ei)/2;
         if(arr[mid+1]-arr[mid] != diff)

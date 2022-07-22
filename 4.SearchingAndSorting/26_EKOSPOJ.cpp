@@ -11,7 +11,7 @@ bool check(ll* arr, int n, ll m, ll ht)
 		if(arr[i] > ht)
 			cutSum += (arr[i]-ht);
 	}
-		return (cutSum >= m);
+	return (cutSum >= m);
 }
  
 int main()

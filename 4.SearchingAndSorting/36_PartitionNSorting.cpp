@@ -16,7 +16,8 @@ int findPivot(int* arr, int l, int r)
     }
 
     int pos = l+smallEqualX;
-    arr[l] = arr[pos] + arr[l] - (arr[pos] = arr[l]);
+    swap(arr[l], arr[pos]);
+    // arr[l] = arr[pos] + arr[l] - (arr[pos] = arr[l]);
 
     int i = l, j = r;
     while(i < pos && j > pos)
@@ -27,7 +28,8 @@ int findPivot(int* arr, int l, int r)
             j--;
         else
         {
-            arr[i] = arr[j] + arr[i] - (arr[j] = arr[i]);
+            swap(arr[i], arr[j]);
+            // arr[i] = arr[j] + arr[i] - (arr[j] = arr[i]);
             i++;    j--;
         }
     }

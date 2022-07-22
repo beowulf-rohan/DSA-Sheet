@@ -1,10 +1,9 @@
-#include<iostream>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef long long int ll;
 
-int *findTwoElement(int *arr, int n)
+vector<ll> findTwoElement(int *arr, int n)
 {    
     int* a = new int[2];
 
